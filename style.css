@@ -3,7 +3,6 @@
     --accent-color: rgb(109, 194, 123);
 }
 
-/* 1. Reset General */
 * {
     margin: 0;
     padding: 0;
@@ -12,7 +11,6 @@
 }
 
 html {
-    /* Es mejor definir el tamaño base aquí y no en el selector universal * */
     font-size: 16px; 
 }
 
@@ -23,7 +21,6 @@ body {
     width: 100vw;
 }
 
-/* 2. Encabezado */
 .hints {
     font-size: clamp(1.5rem, 10vw, 3rem);
     line-height: 1.1;
@@ -39,7 +36,6 @@ mark {
     border-radius: 4px;
 }
 
-/* 3. Contenedor de la Línea de Tiempo */
 .timeline-wrapper {
     width: 100vw;
     height: 70vh;
@@ -71,7 +67,6 @@ mark {
     flex-shrink: 0;
 }
 
-/* 4. Elementos de la Línea */
 .timeline li::after, 
 .timeline li .title, 
 .data {
@@ -104,7 +99,6 @@ mark {
     opacity: 1; 
 }
 
-/* 5. El Círculo / Cuadro de Información (La Data) */
 .data {
     width: 8.5rem;
     height: 8.5rem;
@@ -126,11 +120,10 @@ mark {
     transition: transform 0.3s ease;
 }
 
-/* Estado Expandido (Cuando haces clic) */
 .data.show {
     width: 22rem;
     height: 32rem;
-    max-height: 85vh; /* Evita que se salga en pantallas pequeñas */
+    max-height: 85vh; 
     padding: 1.5rem;
     border-radius: 1.5rem;
     background-image: linear-gradient(45deg, var(--primary-color), var(--accent-color));
@@ -166,13 +159,12 @@ mark {
     border-radius: 1.2rem;
     line-height: 1.5;
     font-size: 0.95rem;
-    overflow-y: auto; /* Scroll interno */
+    overflow-y: auto; 
     margin-bottom: 1rem;
     flex-grow: 1;
-    min-height: 0; /* IMPORTANTE: Para que Chrome respete el scroll */
+    min-height: 0;
 }
 
-/* Scrollbar personalizado para el texto */
 .data p::-webkit-scrollbar { width: 6px; }
 .data p::-webkit-scrollbar-track { background: rgba(255, 255, 255, 0.1); border-radius: 10px; }
 .data p::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.4); border-radius: 10px; }
@@ -188,7 +180,6 @@ mark {
     cursor: pointer;
 }
 
-/* 6. Adaptabilidad (Mobile) */
 @media screen and (max-width: 768px) {
     .data.show {
         position: fixed;    
